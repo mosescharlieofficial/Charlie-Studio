@@ -183,6 +183,61 @@
             transform: scale(0.98);
         }
 
+        /* --- CLIENTS / SCROLLING LOGOS (Dark theme) --- */
+        .clients {
+            background: transparent;
+            padding: 60px 0;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .marquee {
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: scrollLogos 50s linear infinite; /* slightly slower for many icons */
+            will-change: transform;
+        }
+
+        .marquee-group {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .marquee-group i {
+            font-size: 2.5rem;
+            color: #4b5563;
+            transition: color 0.2s;
+            flex-shrink: 0;
+        }
+
+        .marquee-group i:hover {
+            color: var(--primary);
+        }
+
+        .marquee:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLogos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-content {
+                animation: none;
+                overflow-x: auto;
+                scrollbar-width: thin;
+            }
+        }
+
         /* --- SERVICES GRID --- */
         .section { 
             padding: 100px 0; 
@@ -211,7 +266,6 @@
             gap: 25px;
         }
 
-        /* On large screens, force exactly 4 columns so cards are in one row */
         @media (min-width: 1024px) {
             .services-grid {
                 grid-template-columns: repeat(4, 1fr);
@@ -261,7 +315,7 @@
             transform: translateY(0);
         }
 
-        /* --- NEW CONTACT SECTION (DARK THEME) --- */
+        /* --- CONTACT SECTION --- */
         #contact {
             background: var(--card-bg);
             padding: 80px 0;
@@ -323,7 +377,6 @@
             text-decoration: none;
         }
 
-        /* Lead Form Styling */
         #leadForm {
             display: flex;
             flex-direction: column;
@@ -396,7 +449,6 @@
             font-size: 0.9rem;
         }
 
-        /* --- FLOATING WHATSAPP --- */
         .wa-float {
             position: fixed;
             bottom: 20px;
@@ -426,7 +478,7 @@
             text-decoration: none;
         }
 
-        /* === MOBILE OPTIMIZATION (up to 600px) === */
+        /* === MOBILE OPTIMIZATION === */
         @media screen and (max-width: 600px) {
             nav, nav.sticky {
                 padding: 15px 5%;
@@ -496,6 +548,16 @@
                 font-size: 1rem;
             }
 
+            .clients {
+                padding: 40px 0;
+            }
+            .marquee-group {
+                gap: 32px;
+            }
+            .marquee-group i {
+                font-size: 2rem;
+            }
+
             .section {
                 padding: 70px 0;
             }
@@ -518,7 +580,6 @@
                 padding: 30px 25px;
             }
 
-            /* Contact grid stacked */
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -559,7 +620,6 @@
             }
         }
 
-        /* === EXTRA FINE-TUNING FOR iPHONE SE (375x667) === */
         @media screen and (max-width: 375px) {
             .hero {
                 padding: 0 10px;
@@ -576,6 +636,13 @@
             .btn-main {
                 padding: 12px 22px;
                 font-size: 0.9rem;
+            }
+
+            .clients {
+                padding: 30px 0;
+            }
+            .marquee-group i {
+                font-size: 1.8rem;
             }
 
             .section-title h2 {
@@ -669,7 +736,6 @@
 
     <nav id="navbar">
         <a href="#" class="logo">Charlie<span>Studio</span></a>
-        <!-- Hamburger menu button (option symbol) -->
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">
             <i class="fa-solid fa-bars"></i>
         </button>
@@ -687,6 +753,68 @@
             <h1>Elevate Your Digital<br>Brand Presence.</h1>
             <p>We craft high-performance websites and digital marketing strategies that turn clicks into customers.</p>
             <a href="https://wa.me/916301039924" class="btn-main">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- ===== UPDATED SCROLLING LOGOS WITH MANY TECHNOLOGIES ===== -->
+    <section class="clients">
+        <div class="container">
+            <div class="marquee">
+                <div class="marquee-content">
+                    <!-- First group - includes original + many new tech icons -->
+                    <div class="marquee-group">
+                        <!-- Original icons -->
+                        <i class="fab fa-google"></i>
+                        <i class="fab fa-meta"></i>
+                        <i class="fab fa-shopify"></i>
+                        <i class="fab fa-wordpress"></i>
+                        <i class="fab fa-wix"></i>
+                        <i class="fab fa-figma"></i>
+                        <i class="fab fa-trello"></i>
+                        <i class="fas fa-chart-simple"></i>
+                        <!-- Frontend & Mobile -->
+                        <i class="fab fa-react" title="React / React Native"></i>
+                        <i class="fab fa-angular" title="Angular"></i>
+                        <i class="fab fa-vuejs" title="Vue.js"></i>
+                        <i class="fab fa-swift" title="Swift"></i>
+                        <i class="fas fa-code" title="Objective-C / Kotlin"></i>
+                        <i class="fas fa-mobile-alt" title="Flutter"></i>
+                        <!-- Backend & Database -->
+                        <i class="fab fa-node" title="Node.js"></i>
+                        <i class="fab fa-php" title="PHP"></i>
+                        <i class="fas fa-database" title="MySQL / MongoDB"></i>
+                        <i class="fas fa-fire" title="Firebase"></i>
+                        <i class="fas fa-cloud" title="Supabase"></i>
+                        <!-- Additional to fill out -->
+                        <i class="fas fa-bolt" title="Kotlin (alternative)"></i>
+                        <i class="fas fa-leaf" title="MongoDB (alternative)"></i>
+                    </div>
+                    <!-- Duplicate group for seamless loop (exactly the same) -->
+                    <div class="marquee-group">
+                        <i class="fab fa-google"></i>
+                        <i class="fab fa-meta"></i>
+                        <i class="fab fa-shopify"></i>
+                        <i class="fab fa-wordpress"></i>
+                        <i class="fab fa-wix"></i>
+                        <i class="fab fa-figma"></i>
+                        <i class="fab fa-trello"></i>
+                        <i class="fas fa-chart-simple"></i>
+                        <i class="fab fa-react"></i>
+                        <i class="fab fa-angular"></i>
+                        <i class="fab fa-vuejs"></i>
+                        <i class="fab fa-swift"></i>
+                        <i class="fas fa-code"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fab fa-node"></i>
+                        <i class="fab fa-php"></i>
+                        <i class="fas fa-database"></i>
+                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-cloud"></i>
+                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -733,7 +861,6 @@
         </div>
     </section>
 
-    <!-- Contact + Lead Form (integrated with dark theme) -->
     <section id="contact" class="reveal">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -761,7 +888,6 @@
                         <span>Quick reply on WhatsApp</span>
                     </div>
                 </div>
-                <!-- Lead form that submits via WhatsApp (prefills message) -->
                 <form id="leadForm">
                     <div class="form-group">
                         <input type="text" id="name" placeholder="Your name" required>
@@ -790,13 +916,11 @@
     </a>
 
     <script>
-        // Sticky Navbar Effect
         window.addEventListener("scroll", function() {
             var nav = document.querySelector("nav");
             nav.classList.toggle("sticky", window.scrollY > 50);
         });
 
-        // Scroll Reveal Animation
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -811,7 +935,6 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -838,7 +961,6 @@
             });
         }
 
-        // WhatsApp form submission
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -847,13 +969,11 @@
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            // Construct WhatsApp message
             let whatsappMessage = `Hello Charlie Studio, I'm ${name}.`;
             if (phone) whatsappMessage += `%0APhone: ${phone}`;
             if (email) whatsappMessage += `%0AEmail: ${email}`;
             if (message) whatsappMessage += `%0AMessage: ${message}`;
 
-            // Encode for URL
             const url = `https://wa.me/916301039924?text=${whatsappMessage}`;
             window.open(url, '_blank');
         });
