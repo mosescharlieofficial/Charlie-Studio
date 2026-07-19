@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Charlie Studio | Premier Digital Agency in Machilipatnam</title>
+    <title>Charlie Studio | Premier Digital Agency in Andhra Pradesh</title>
     
-    <meta name="description" content="Charlie Studio: Expert Digital Marketing, SEO, and Premium Web Design in Machilipatnam. Transform your business with data-driven strategies.">
-    <meta name="keywords" content="Digital Marketing Machilipatnam, Web Design Andhra Pradesh, SEO Expert, Charlie Studio">
+    <meta name="description" content="Charlie Studio: Expert Digital Marketing, SEO, and Premium Web Design in Andhra Pradesh. Transform your business with data-driven strategies.">
+    <meta name="keywords" content="Digital Marketing Andhra Pradesh, Web Design Andhra Pradesh, SEO Expert, Charlie Studio">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -45,7 +45,6 @@
             padding: 0 20px;
         }
 
-        /* Remove underlines from all icons / logos */
         i, .fab, .fas, .fa-whatsapp, .fa-brands {
             text-decoration: none !important;
         }
@@ -98,7 +97,6 @@
         }
         .nav-links a:hover { color: var(--primary); }
 
-        /* Menu toggle button (hidden on desktop) */
         .menu-toggle {
             display: none;
             background: transparent;
@@ -118,7 +116,7 @@
             transform: scale(0.95);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -183,7 +181,7 @@
             transform: scale(0.98);
         }
 
-        /* --- CLIENTS / SCROLLING LOGOS (Dark theme) --- */
+        /* --- CLIENTS MARQUEE --- */
         .clients {
             background: transparent;
             padding: 60px 0;
@@ -238,7 +236,7 @@
             }
         }
 
-        /* --- SERVICES GRID --- */
+        /* --- SERVICES --- */
         .section { 
             padding: 100px 0; 
         }
@@ -315,7 +313,283 @@
             transform: translateY(0);
         }
 
-        /* --- CONTACT SECTION --- */
+        /* --- PROJECTS --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .project-thumbnail {
+            width: 100%;
+            height: 220px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-thumbnail::after {
+            content: "Coming Soon";
+            color: rgba(255,255,255,0.8);
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-link {
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border: 2px solid white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .project-link:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        .project-info {
+            padding: 24px 25px 30px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .project-info p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* --- TEAM --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .team-card .role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .team-socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-socials a {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .team-socials a:hover {
+            color: var(--primary);
+        }
+
+        /* --- PRICING --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+            box-shadow: 0 0 30px rgba(99,102,241,0.15);
+        }
+
+        .pricing-card .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #94a3b8;
+        }
+
+        .pricing-card .description {
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0 30px;
+            flex: 1;
+        }
+
+        .pricing-card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--glass-border);
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-card ul li i {
+            color: var(--primary);
+            width: 20px;
+            font-size: 0.9rem;
+        }
+
+        .pricing-card .btn-pricing {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        .pricing-card .btn-pricing:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+        }
+
+        .pricing-card.featured .btn-pricing {
+            background: var(--primary);
+            box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+        }
+
+        .pricing-card.featured .btn-pricing:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* --- CONTACT --- */
         #contact {
             background: var(--card-bg);
             padding: 80px 0;
@@ -395,7 +669,7 @@
             font-size: 1rem;
             color: white;
             transition: 0.3s;
-            appearance: none; /* Remove default arrow for custom styling */
+            appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
             cursor: pointer;
@@ -489,7 +763,7 @@
             text-decoration: none;
         }
 
-        /* === MOBILE OPTIMIZATION === */
+        /* --- MOBILE --- */
         @media screen and (max-width: 600px) {
             nav, nav.sticky {
                 padding: 15px 5%;
@@ -581,14 +855,34 @@
                 font-size: 0.9rem;
             }
 
-            .services-grid {
+            .services-grid,
+            .projects-grid,
+            .team-grid,
+            .pricing-grid {
                 gap: 20px;
                 grid-template-columns: 1fr;
                 padding: 0 5%;
             }
 
-            .card {
+            .card, .project-card, .team-card, .pricing-card {
                 padding: 30px 25px;
+            }
+
+            .project-thumbnail {
+                height: 180px;
+            }
+            .project-info {
+                padding: 20px;
+            }
+
+            .team-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+
+            .pricing-card .price {
+                font-size: 2.5rem;
             }
 
             .contact-grid {
@@ -663,7 +957,7 @@
                 font-size: 0.85rem;
             }
 
-            .card {
+            .card, .project-card, .team-card, .pricing-card {
                 padding: 25px 18px;
             }
             .card i {
@@ -674,6 +968,29 @@
             }
             .card p {
                 font-size: 0.85rem;
+            }
+
+            .project-thumbnail {
+                height: 150px;
+            }
+            .project-info h3 {
+                font-size: 1.1rem;
+            }
+            .project-info p {
+                font-size: 0.85rem;
+            }
+
+            .team-avatar {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+            .team-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .pricing-card .price {
+                font-size: 2rem;
             }
 
             .contact-grid {
@@ -754,26 +1071,30 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#">Home</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="career.html">Careers</a></li>  <!-- ✅ Now points to career.html -->
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <p>BASED IN MACHILIPATNAM</p>
+            <p>BASED IN ANDHRA PRADESH</p>
             <h1>Elevate Your Digital<br>Brand Presence.</h1>
             <p>We craft high-performance websites and digital marketing strategies that turn clicks into customers.</p>
             <a href="https://wa.me/916301039924" class="btn-main">Start Your Project</a>
         </div>
     </section>
 
-    <!-- SCROLLING LOGOS SECTION -->
+    <!-- CLIENTS MARQUEE -->
     <section class="clients">
         <div class="container">
             <div class="marquee">
                 <div class="marquee-content">
-                    <!-- First group of logos -->
                     <div class="marquee-group">
                         <i class="fab fa-google"></i>
                         <i class="fab fa-meta"></i>
@@ -783,21 +1104,20 @@
                         <i class="fab fa-figma"></i>
                         <i class="fab fa-trello"></i>
                         <i class="fas fa-chart-simple"></i>
-                        <i class="fab fa-react" title="React / React Native"></i>
-                        <i class="fab fa-angular" title="Angular"></i>
-                        <i class="fab fa-vuejs" title="Vue.js"></i>
-                        <i class="fab fa-swift" title="Swift"></i>
-                        <i class="fas fa-code" title="Objective-C / Kotlin"></i>
-                        <i class="fas fa-mobile-alt" title="Flutter"></i>
-                        <i class="fab fa-node" title="Node.js"></i>
-                        <i class="fab fa-php" title="PHP"></i>
-                        <i class="fas fa-database" title="MySQL / MongoDB"></i>
-                        <i class="fas fa-fire" title="Firebase"></i>
-                        <i class="fas fa-cloud" title="Supabase"></i>
-                        <i class="fas fa-bolt" title="Kotlin (alternative)"></i>
-                        <i class="fas fa-leaf" title="MongoDB (alternative)"></i>
+                        <i class="fab fa-react"></i>
+                        <i class="fab fa-angular"></i>
+                        <i class="fab fa-vuejs"></i>
+                        <i class="fab fa-swift"></i>
+                        <i class="fas fa-code"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fab fa-node"></i>
+                        <i class="fab fa-php"></i>
+                        <i class="fas fa-database"></i>
+                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-cloud"></i>
+                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <!-- Duplicate group for seamless loop -->
                     <div class="marquee-group">
                         <i class="fab fa-google"></i>
                         <i class="fab fa-meta"></i>
@@ -826,6 +1146,7 @@
         </div>
     </section>
 
+    <!-- SERVICES -->
     <section class="section reveal" id="services">
         <div class="container">
             <div class="section-title">
@@ -857,6 +1178,167 @@
         </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section class="section reveal" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <p>Our Work</p>
+                <h2>Featured Projects</h2>
+                <p style="color:#94a3b8; text-transform:none; letter-spacing:normal; max-width:600px; margin:10px auto 0;">
+                    Transforming ideas into digital success stories.
+                </p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-thumbnail" style="background: linear-gradient(135deg, #6366f1, #a855f7);">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">View Case Study →</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Web Engineering</span>
+                        <h3>E-Commerce Platform</h3>
+                        <p>High-converting store with custom checkout flow for a local brand.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-thumbnail" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">View Case Study →</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Digital Marketing</span>
+                        <h3>Social Media Growth</h3>
+                        <p>Scaled a startup's Instagram from 0 to 10k followers in 60 days.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-thumbnail" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">View Case Study →</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">UI/UX Design</span>
+                        <h3>SaaS Dashboard Redesign</h3>
+                        <p>Intuitive interface design that reduced user churn by 25%.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn-main" style="background: transparent; border: 1px solid var(--primary); box-shadow: none;">
+                    View All Projects <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section reveal" id="team" style="background: var(--card-bg);">
+        <div class="container">
+            <div class="section-title">
+                <p>Our People</p>
+                <h2>Meet the Team</h2>
+                <p style="color:#94a3b8; text-transform:none; letter-spacing:normal;">Passionate creators behind every success.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">CS</div>
+                    <h3>Moses Charlie</h3>
+                    <p class="role">Founder & Lead Strategist</p>
+                    <div class="team-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">AD</div>
+                    <h3>Aditya</h3>
+                    <p class="role">Senior Developer</p>
+                    <div class="team-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #f59e0b, #f97316);">PK</div>
+                    <h3>Priya</h3>
+                    <p class="role">Marketing Lead</p>
+                    <div class="team-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">RS</div>
+                    <h3>Rahul</h3>
+                    <p class="role">UI/UX Designer</p>
+                    <div class="team-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section reveal" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <p>Plans</p>
+                <h2>Choose Your Package</h2>
+                <p style="color:#94a3b8; text-transform:none; letter-spacing:normal;">Flexible pricing to fit your needs.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="price">₹15,000 <span>/ project</span></div>
+                    <p class="description">Perfect for small businesses starting out.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 5-Page Website</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                        <li><i class="fas fa-check"></i> 2 Months Support</li>
+                        <li><i class="fas fa-check"></i> Social Media Setup</li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="plan-name">Professional</div>
+                    <div class="price">₹45,000 <span>/ project</span></div>
+                    <p class="description">Most popular for growing brands.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 15-Page Website</li>
+                        <li><i class="fas fa-check"></i> Advanced SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> 6 Months Support</li>
+                        <li><i class="fas fa-check"></i> Content Marketing</li>
+                        <li><i class="fas fa-check"></i> Monthly Performance Reports</li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="price">Custom</div>
+                    <p class="description">Tailored solutions for large-scale needs.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited Pages</li>
+                        <li><i class="fas fa-check"></i> Full Custom Development</li>
+                        <li><i class="fas fa-check"></i> 12 Months Support</li>
+                        <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                        <li><i class="fas fa-check"></i> API Integrations</li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
     <section class="section reveal" id="about" style="text-align: center;">
         <div class="container">
             <div class="section-title">
@@ -869,14 +1351,15 @@
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="reveal">
         <div class="container">
-            <div class="section-title" data-aos="fade-up">
+            <div class="section-title">
                 <p>Get in touch</p>
                 <h2>Send us a message</h2>
                 <p style="color:#94a3b8; text-transform:none; letter-spacing:normal;">We'll respond within 2 hours.</p>
             </div>
-            <div class="contact-grid" data-aos="zoom-in-up">
+            <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Let's grow your business</h3>
                     <div class="contact-detail">
@@ -889,7 +1372,7 @@
                     </div>
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
-                        <div><strong>Email</strong><br>hello@charliestudio.in</div>
+                        <div><strong>Email</strong><br>mosescharlieofficial@gmail.com</div>
                     </div>
                     <div class="whatsapp-note">
                         <i class="fab fa-whatsapp"></i>
@@ -906,7 +1389,6 @@
                     <div class="form-group">
                         <input type="email" id="email" placeholder="Email address">
                     </div>
-                    <!-- New dropdown for Interested Service -->
                     <div class="form-group">
                         <select id="service" name="service">
                             <option value="" disabled selected>Interested in (optional)</option>
@@ -934,11 +1416,13 @@
     </a>
 
     <script>
+        // Sticky nav
         window.addEventListener("scroll", function() {
             var nav = document.querySelector("nav");
             nav.classList.toggle("sticky", window.scrollY > 50);
         });
 
+        // Reveal animations
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -953,6 +1437,7 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
+        // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -979,6 +1464,20 @@
             });
         }
 
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === "#") return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ----- LEAD FORM SUBMISSION (client) -----
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -988,14 +1487,24 @@
             const service = document.getElementById('service').value;
             const message = document.getElementById('message').value.trim();
 
-            let whatsappMessage = `Hello Charlie Studio, I'm ${name}.`;
-            if (phone) whatsappMessage += `%0APhone: ${phone}`;
-            if (email) whatsappMessage += `%0AEmail: ${email}`;
-            if (service) whatsappMessage += `%0AInterested in: ${service}`;
-            if (message) whatsappMessage += `%0AMessage: ${message}`;
+            if (!name) { alert('Please enter your name'); return; }
+            if (!phone || !/^[0-9+\-\s()]{10,15}$/.test(phone)) {
+                alert('Please enter a valid phone number (10-15 digits)');
+                return;
+            }
+            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
 
-            const url = `https://wa.me/916301039924?text=${whatsappMessage}`;
-            window.open(url, '_blank');
+            const WHATSAPP = '916301039924';
+            let msg = `Hello Charlie Studio, I'm ${name}.`;
+            if (phone) msg += `%0APhone: ${phone}`;
+            if (email) msg += `%0AEmail: ${email}`;
+            if (service) msg += `%0AInterested in: ${service}`;
+            if (message) msg += `%0AMessage: ${message}`;
+
+            window.location.href = `https://wa.me/${WHATSAPP}?text=${msg}`;
         });
     </script>
 </body>

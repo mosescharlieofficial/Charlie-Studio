@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Careers | Charlie Studio</title>
+    
+    <meta name="description" content="Join Charlie Studio – we're hiring Web Developers, Designers, and Marketing experts in Machilipatnam.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #0ea5e9;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        i, .fab, .fas, .fa-whatsapp, .fa-brands {
+            text-decoration: none !important;
+        }
+        a, a i, a .fab, a .fas {
+            text-decoration: none;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: 0.4s;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav.sticky {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 15px 10%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            transition: all 0.3s ease;
+        }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a {
+            text-decoration: none;
+            color: #cbd5e1;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 12px;
+            transition: 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .menu-toggle:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        .menu-toggle:active {
+            transform: scale(0.95);
+        }
+
+        /* --- HERO (Careers) --- */
+        .careers-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at top left, #1e293b, #0f172a);
+            position: relative;
+            padding: 120px 20px 80px;
+        }
+
+        .careers-hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            filter: blur(150px);
+            opacity: 0.12;
+            top: 10%;
+            right: 10%;
+        }
+
+        .careers-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .careers-hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 10px;
+        }
+
+        .careers-hero .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        /* --- SECTION --- */
+        .section { 
+            padding: 80px 0; 
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 10px; 
+            line-height: 1.2;
+            color: white;
+        }
+        .section-title p { 
+            color: var(--primary); 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 1rem;
+        }
+        .section-title .sub {
+            color: #94a3b8;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 400;
+        }
+
+        /* --- PERKS --- */
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .perk-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .perk-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-6px);
+        }
+
+        .perk-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .perk-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .perk-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* --- OPEN POSITIONS --- */
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .position-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .position-card:hover {
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .position-card h3 {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .position-card .pos-type {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .position-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin: 15px 0;
+            flex: 1;
+        }
+
+        .position-card .pos-tag {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: #cbd5e1;
+            font-size: 0.75rem;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-right: 8px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-apply-pos {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .btn-apply-pos:hover {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+        }
+
+        /* --- APPLICATION FORM --- */
+        #apply {
+            background: var(--card-bg);
+        }
+
+        .apply-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .apply-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .apply-info p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .apply-info ul {
+            list-style: none;
+            color: #cbd5e1;
+        }
+
+        .apply-info ul li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .apply-info ul li i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        #careerForm {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #careerForm .form-group {
+            width: 100%;
+        }
+
+        #careerForm .form-group input,
+        #careerForm .form-group select,
+        #careerForm .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            color: white;
+            transition: 0.3s;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+        }
+
+        #careerForm .form-group select option {
+            background: #1e293b;
+            color: white;
+        }
+
+        #careerForm .form-group input:focus,
+        #careerForm .form-group select:focus,
+        #careerForm .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #careerForm .form-group input::placeholder,
+        #careerForm .form-group textarea::placeholder {
+            color: #64748b;
+        }
+
+        .btn-apply {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn-apply:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+        }
+
+        .btn-apply:active {
+            transform: scale(0.98);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--glass-border);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- REVEAL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s all ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- MOBILE --- */
+        @media screen and (max-width: 600px) {
+            nav, nav.sticky {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 20px 0;
+                border-bottom: 1px solid var(--glass-border);
+                box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+                z-index: 999;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                display: block;
+                width: 100%;
+            }
+
+            .careers-hero {
+                min-height: 50vh;
+                padding: 100px 20px 60px;
+            }
+
+            .careers-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .perks-grid,
+            .positions-grid {
+                grid-template-columns: 1fr;
+                padding: 0 5%;
+            }
+
+            .apply-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 20px;
+                margin: 0 5%;
+            }
+
+            .apply-info h3 {
+                font-size: 1.6rem;
+            }
+
+            .btn-apply {
+                padding: 14px 25px;
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 30px 15px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .careers-hero h1 {
+                font-size: 1.9rem;
+            }
+            .careers-hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .apply-grid {
+                padding: 25px 15px;
+                margin: 0 3%;
+                gap: 20px;
+            }
+            .apply-info h3 {
+                font-size: 1.4rem;
+            }
+            .apply-info p {
+                font-size: 0.9rem;
+            }
+            .apply-info ul li {
+                font-size: 0.9rem;
+            }
+
+            #careerForm .form-group input,
+            #careerForm .form-group select,
+            #careerForm .form-group textarea {
+                padding: 12px 16px;
+                font-size: 0.9rem;
+            }
+            .btn-apply {
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">Charlie<span>Studio</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- CAREERS HERO -->
+    <section class="careers-hero">
+        <div class="container">
+            <div class="badge"> We're hiring!</div>
+            <h1>Join Our Team</h1>
+            <p>Build your career with a creative, remote-first agency that values innovation and growth.</p>
+        </div>
+    </section>
+
+    <!-- PERKS / BENEFITS -->
+    <section class="section reveal">
+        <div class="container">
+            <div class="section-title">
+                <p>Why join us</p>
+                <h2>Perks &amp; Benefits</h2>
+            </div>
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Flexible Hours</h3>
+                    <p>Work when you're most productive. We trust you to deliver.</p>
+                </div>
+                <div class="perk-card">
+                    <i class="fas fa-laptop-house"></i>
+                    <h3>Remote-First</h3>
+                    <p>Work from anywhere in India. No commute, more focus.</p>
+                </div>
+                <div class="perk-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Competitive Pay</h3>
+                    <p>We reward talent. Regular reviews and performance bonuses.</p>
+                </div>
+                <div class="perk-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Continuous Learning</h3>
+                    <p>Courses, conferences, and books—we invest in your growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPEN POSITIONS -->
+    <section class="section reveal" style="background: var(--card-bg);">
+        <div class="container">
+            <div class="section-title">
+                <p>Open roles</p>
+                <h2>Current Openings</h2>
+                <p class="sub">Apply now—we review applications within 48 hours.</p>
+            </div>
+            <div class="positions-grid">
+                <div class="position-card">
+                    <h3>Web Developer</h3>
+                    <span class="pos-type">Full-time / Remote</span>
+                    <p>Build high-performance websites using React, Next.js, or PHP. Experience with Tailwind and APIs is a plus.</p>
+                    <div>
+                        <span class="pos-tag">React</span>
+                        <span class="pos-tag">Next.js</span>
+                        <span class="pos-tag">PHP</span>
+                    </div>
+                    <a href="#apply" class="btn-apply-pos">Apply Now →</a>
+                </div>
+                <div class="position-card">
+                    <h3>UI/UX Designer</h3>
+                    <span class="pos-type">Full-time / Remote</span>
+                    <p>Design beautiful, user-centric interfaces in Figma. Collaborate with developers to bring your vision to life.</p>
+                    <div>
+                        <span class="pos-tag">Figma</span>
+                        <span class="pos-tag">Design Systems</span>
+                        <span class="pos-tag">Prototyping</span>
+                    </div>
+                    <a href="#apply" class="btn-apply-pos">Apply Now →</a>
+                </div>
+                <div class="position-card">
+                    <h3>Digital Marketing Specialist</h3>
+                    <span class="pos-type">Full-time / Remote</span>
+                    <p>Drive growth through SEO, social media, and content marketing. Analytics and creative copywriting skills are essential.</p>
+                    <div>
+                        <span class="pos-tag">SEO</span>
+                        <span class="pos-tag">Google Ads</span>
+                        <span class="pos-tag">Analytics</span>
+                    </div>
+                    <a href="#apply" class="btn-apply-pos">Apply Now →</a>
+                </div>
+                <div class="position-card">
+                    <h3>Project Manager</h3>
+                    <span class="pos-type">Full-time / Remote</span>
+                    <p>Coordinate client projects, manage timelines, and ensure smooth delivery. Experience with Agile and Jira is a plus.</p>
+                    <div>
+                        <span class="pos-tag">Agile</span>
+                        <span class="pos-tag">Jira</span>
+                        <span class="pos-tag">Client Communication</span>
+                    </div>
+                    <a href="#apply" class="btn-apply-pos">Apply Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLICATION FORM -->
+    <section class="section reveal" id="apply">
+        <div class="container">
+            <div class="section-title">
+                <p>Apply now</p>
+                <h2>Send Your Application</h2>
+                <p class="sub">We'll get back to you within 2–3 business days.</p>
+            </div>
+            <div class="apply-grid">
+                <div class="apply-info">
+                    <h3>What we're looking for</h3>
+                    <p>We're not just looking for skills—we want people who are curious, collaborative, and passionate about their craft.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Strong problem-solving ability</li>
+                        <li><i class="fas fa-check-circle"></i> Excellent communication skills</li>
+                        <li><i class="fas fa-check-circle"></i> Self-motivated and reliable</li>
+                        <li><i class="fas fa-check-circle"></i> Eagerness to learn and adapt</li>
+                    </ul>
+                    <p style="margin-top:20px; color:#64748b; font-size:0.9rem;">
+                        <i class="fas fa-shield-alt" style="color:var(--primary);"></i> Your data is safe with us. We'll only use it for hiring purposes.
+                    </p>
+                </div>
+                <form id="careerForm">
+                    <div class="form-group">
+                        <input type="text" id="candidateName" placeholder="Full name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="candidateEmail" placeholder="Email address *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="candidatePhone" placeholder="Phone number *" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="candidateRole" required>
+                            <option value="" disabled selected>Which role interests you? *</option>
+                            <option value="Web Developer">Web Developer</option>
+                            <option value="UI/UX Designer">UI/UX Designer</option>
+                            <option value="Digital Marketing Specialist">Digital Marketing Specialist</option>
+                            <option value="SEO Expert">SEO Expert</option>
+                            <option value="Project Manager">Project Manager</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="candidateExperience" required>
+                            <option value="" disabled selected>Experience level *</option>
+                            <option value="Junior (0-2 years)">Junior (0-2 years)</option>
+                            <option value="Mid (3-5 years)">Mid (3-5 years)</option>
+                            <option value="Senior (6+ years)">Senior (6+ years)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="url" id="candidatePortfolio" placeholder="Portfolio / GitHub link (optional)">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="candidateMessage" rows="4" placeholder="Tell us why you'd be a great fit... *" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-apply"><i class="fas fa-paper-plane"></i> Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Charlie Studio. All rights reserved. <a href="index.html">Back to Home</a></p>
+    </footer>
+
+    <script>
+        // Sticky nav
+        window.addEventListener("scroll", function() {
+            var nav = document.querySelector("nav");
+            nav.classList.toggle("sticky", window.scrollY > 50);
+        });
+
+        // Reveal animations
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+                const icon = menuToggle.querySelector('i');
+                if (navLinks.classList.contains('show')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('show');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Smooth scroll for internal links (like #apply)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === "#") return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ----- CAREER FORM SUBMISSION -----
+        document.getElementById('careerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('candidateName').value.trim();
+            const email = document.getElementById('candidateEmail').value.trim();
+            const phone = document.getElementById('candidatePhone').value.trim();
+            const role = document.getElementById('candidateRole').value;
+            const experience = document.getElementById('candidateExperience').value;
+            const portfolio = document.getElementById('candidatePortfolio').value.trim();
+            const message = document.getElementById('candidateMessage').value.trim();
+
+            // Validation
+            if (!name) { alert('Please enter your full name'); return; }
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            if (!phone || !/^[0-9+\-\s()]{10,15}$/.test(phone)) {
+                alert('Please enter a valid phone number (10-15 digits)');
+                return;
+            }
+            if (!role) { alert('Please select a role'); return; }
+            if (!experience) { alert('Please select your experience level'); return; }
+            if (!message) { alert('Please tell us why you\'d be a great fit'); return; }
+
+            const WHATSAPP = '916301039924'; // 👈 Change this to your WhatsApp number
+            let msg = `New Job Application!%0A`;
+            msg += `Name: ${name}%0A`;
+            msg += `Email: ${email}%0A`;
+            msg += `Phone: ${phone}%0A`;
+            msg += `Role: ${role}%0A`;
+            msg += `Experience: ${experience}%0A`;
+            if (portfolio) msg += `Portfolio: ${portfolio}%0A`;
+            msg += `Message: ${message}`;
+
+            // Send via WhatsApp
+            window.location.href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+        });
+    </script>
+</body>
+</html>
