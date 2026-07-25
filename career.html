@@ -51,7 +51,7 @@
             text-decoration: none;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- NAVIGATION (copied from index.html) --- */
         nav {
             position: fixed;
             top: 0;
@@ -62,14 +62,13 @@
             align-items: center;
             z-index: 1000;
             transition: 0.4s;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
         }
 
         nav.sticky {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
             padding: 15px 10%;
+            border-bottom: 1px solid var(--glass-border);
         }
 
         .logo {
@@ -80,14 +79,20 @@
             text-decoration: none;
         }
 
-        .logo span { color: var(--primary); }
-
-        .nav-links { 
-            display: flex; 
-            list-style: none; 
-            transition: all 0.3s ease;
+        .logo span {
+            color: var(--primary);
         }
-        .nav-links li { margin-left: 30px; }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            transition: all 0.3s ease;
+            align-items: center;
+        }
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
         .nav-links a {
             text-decoration: none;
             color: #cbd5e1;
@@ -95,7 +100,9 @@
             transition: 0.3s;
             font-size: 0.95rem;
         }
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
 
         .menu-toggle {
             display: none;
@@ -110,10 +117,193 @@
             -webkit-tap-highlight-color: transparent;
         }
         .menu-toggle:hover {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
         }
         .menu-toggle:active {
             transform: scale(0.95);
+        }
+
+        /* --- MEGA MENU --- */
+        .nav-item-mega {
+            position: relative;
+        }
+
+        .mega-trigger-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: default;
+        }
+
+        .mega-trigger-wrapper .services-link {
+            color: #cbd5e1;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .mega-trigger-wrapper .services-link:hover {
+            color: var(--primary);
+        }
+
+        .mega-trigger-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #64748b;
+            font-size: 0.65rem;
+            padding: 2px 2px 2px 4px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mega-trigger-btn:hover {
+            color: var(--primary);
+        }
+
+        .mega-trigger-btn .chevron {
+            transition: transform 0.3s ease;
+            pointer-events: none;
+            font-size: 0.65rem;
+        }
+
+        .nav-item-mega:hover .mega-trigger-btn .chevron,
+        .nav-item-mega.open .mega-trigger-btn .chevron {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .mega-menu {
+            position: absolute;
+            top: calc(100% + 22px);
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            width: 880px;
+            max-width: 90vw;
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.02);
+            padding: 36px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+            z-index: 1001;
+        }
+
+        .mega-menu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 16px;
+            height: 16px;
+            background: rgba(15, 23, 42, 0.92);
+            border-left: 1px solid var(--glass-border);
+            border-top: 1px solid var(--glass-border);
+            border-radius: 3px;
+        }
+
+        .nav-item-mega:hover .mega-menu,
+        .nav-item-mega.open .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .mega-col {
+            padding: 0 14px;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .mega-col:last-child {
+            border-right: none;
+        }
+
+        .mega-col-title {
+            color: var(--primary);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mega-col-title i {
+            font-size: 0.85rem;
+        }
+
+        .mega-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .mega-links li {
+            margin-left: 0;
+        }
+
+        .mega-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 10px;
+            border-radius: 12px;
+            color: #cbd5e1;
+            font-size: 0.87rem;
+            font-weight: 500;
+            transition: 0.25s ease;
+            text-decoration: none;
+        }
+
+        .mega-links a i {
+            color: #64748b;
+            font-size: 0.9rem;
+            width: 18px;
+            text-align: center;
+            flex-shrink: 0;
+            transition: 0.25s ease;
+        }
+
+        .mega-links a:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .mega-links a:hover i {
+            color: var(--primary);
+        }
+
+        .ai-tag {
+            margin-left: auto;
+            font-size: 0.6rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2px 8px;
+            border-radius: 20px;
+            flex-shrink: 0;
         }
 
         /* --- HERO (Careers) --- */
@@ -460,9 +650,10 @@
             transform: translateY(0);
         }
 
-        /* --- MOBILE --- */
+        /* --- MOBILE (copied & merged from index.html) --- */
         @media screen and (max-width: 600px) {
-            nav, nav.sticky {
+            nav,
+            nav.sticky {
                 padding: 15px 5%;
             }
 
@@ -485,8 +676,10 @@
                 backdrop-filter: blur(10px);
                 padding: 20px 0;
                 border-bottom: 1px solid var(--glass-border);
-                box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+                box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
                 z-index: 999;
+                max-height: 80vh;
+                overflow-y: auto;
             }
 
             .nav-links.show {
@@ -496,8 +689,8 @@
             .nav-links li {
                 margin: 0;
                 text-align: center;
-                padding: 15px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.05);
+                padding: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             }
 
             .nav-links li:last-child {
@@ -508,6 +701,81 @@
                 font-size: 1.2rem;
                 display: block;
                 width: 100%;
+                padding: 15px 0;
+            }
+
+            /* Mega menu becomes an inline accordion panel on mobile */
+            .nav-item-mega {
+                padding: 0;
+            }
+
+            .mega-trigger-wrapper {
+                justify-content: center;
+                padding: 15px 0;
+                gap: 8px;
+            }
+
+            .mega-trigger-wrapper .services-link {
+                font-size: 1.2rem;
+                padding: 0;
+            }
+
+            .mega-trigger-btn {
+                font-size: 0.8rem;
+                padding: 4px 8px;
+                color: #94a3b8;
+            }
+
+            .mega-trigger-btn:hover {
+                color: #94a3b8;
+            }
+
+            .mega-menu {
+                position: static;
+                transform: none !important;
+                width: 100%;
+                max-width: 100%;
+                display: none;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                border-radius: 0;
+                border: none;
+                border-top: 1px solid var(--glass-border);
+                box-shadow: none;
+                backdrop-filter: none;
+                background: rgba(255, 255, 255, 0.02);
+                padding: 20px 8%;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            .mega-menu::before {
+                display: none;
+            }
+
+            .nav-item-mega.open .mega-menu {
+                display: grid;
+            }
+
+            .mega-col {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                padding: 0 0 16px;
+            }
+            .mega-col:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .mega-col-title {
+                justify-content: center;
+            }
+            .mega-links a {
+                justify-content: center;
+            }
+            .mega-links a:hover {
+                transform: none;
             }
 
             .careers-hero {
@@ -597,6 +865,7 @@
 </head>
 <body>
 
+    <!-- ===== UPDATED NAVIGATION (matches index.html) ===== -->
     <nav id="navbar">
         <a href="index.html" class="logo">Charlie<span>Studio</span></a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">
@@ -604,10 +873,62 @@
         </button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#services">Services</a></li>
+
+            <!-- SERVICES WITH MEGA MENU -->
+            <li class="nav-item-mega" id="megaItem">
+                <div class="mega-trigger-wrapper">
+                    <a href="services.html" class="services-link">Services</a>
+                    <button class="mega-trigger-btn" id="megaTrigger" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down chevron"></i>
+                    </button>
+                </div>
+
+                <div class="mega-menu" id="megaMenu">
+                    <div class="mega-col">
+                        <p class="mega-col-title"><i class="fa-solid fa-globe"></i> Web & Digital</p>
+                        <ul class="mega-links">
+                            <li><a href="services.html#web"><i class="fa-solid fa-window-maximize"></i> Website Services</a></li>
+                            <li><a href="services.html#seo"><i class="fa-solid fa-chart-line"></i> SEO Services</a></li>
+                            <li><a href="services.html#gmb"><i class="fa-solid fa-location-dot"></i> Google Business Profile</a></li>
+                            <li><a href="services.html#reputation"><i class="fa-solid fa-star"></i> Reputation Management</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mega-col">
+                        <p class="mega-col-title"><i class="fa-solid fa-bullhorn"></i> Marketing & Social</p>
+                        <ul class="mega-links">
+                            <li><a href="services.html#social"><i class="fa-solid fa-hashtag"></i> Social Media Management</a></li>
+                            <li><a href="services.html#digital"><i class="fa-solid fa-rocket"></i> Digital Marketing</a></li>
+                            <li><a href="services.html#branding"><i class="fa-solid fa-palette"></i> Branding</a></li>
+                            <li><a href="services.html#uiux"><i class="fa-solid fa-fingerprint"></i> UI/UX Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mega-col">
+                        <p class="mega-col-title"><i class="fa-solid fa-microchip"></i> Tech & Innovation</p>
+                        <ul class="mega-links">
+                            <li><a href="services.html#software"><i class="fa-solid fa-laptop-code"></i> Software Development</a></li>
+                            <li><a href="services.html#ai"><i class="fa-solid fa-robot"></i> AI Services <span class="ai-tag">AI</span></a></li>
+                            <li><a href="services.html#cloud"><i class="fa-solid fa-cloud"></i> Cloud & IT Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mega-col">
+                        <p class="mega-col-title"><i class="fa-solid fa-lightbulb"></i> Creative & Consulting</p>
+                        <ul class="mega-links">
+                            <li><a href="services.html#creative"><i class="fa-solid fa-clapperboard"></i> Creative Services</a></li>
+                            <li><a href="services.html#printing"><i class="fa-solid fa-print"></i> Printing Services</a></li>
+                            <li><a href="services.html#consulting"><i class="fa-solid fa-briefcase"></i> Business Consulting</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Links to sections on the home page -->
             <li><a href="index.html#projects">Projects</a></li>
             <li><a href="index.html#team">Team</a></li>
             <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="career.html">Careers</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -816,15 +1137,6 @@
                     icon.classList.add('fa-bars');
                 }
             });
-
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('show');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                });
-            });
         }
 
         // Smooth scroll for internal links (like #apply)
@@ -839,6 +1151,98 @@
                 }
             });
         });
+
+        // ----- MEGA MENU BEHAVIOR (mobile toggle + desktop hover) -----
+        const megaItem = document.getElementById('megaItem');
+        const megaTrigger = document.getElementById('megaTrigger');
+        const megaMenu = document.getElementById('megaMenu');
+
+        function isMobile() {
+            return window.matchMedia('(max-width: 600px)').matches;
+        }
+
+        // On mobile: toggle mega menu when clicking the chevron button
+        if (megaTrigger) {
+            megaTrigger.addEventListener('click', function(e) {
+                e.stopPropagation(); // prevent event bubbling
+                if (isMobile()) {
+                    e.preventDefault();
+                    const isOpen = megaItem.classList.toggle('open');
+                    megaTrigger.setAttribute('aria-expanded', isOpen);
+                }
+            });
+        }
+
+        // Close mega menu when clicking outside (mobile)
+        document.addEventListener('click', function(e) {
+            if (isMobile() && megaItem && !megaItem.contains(e.target)) {
+                megaItem.classList.remove('open');
+                megaTrigger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close mobile mega panel when a sub-link is tapped
+        if (megaMenu) {
+            megaMenu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (isMobile()) {
+                        megaItem.classList.remove('open');
+                        megaTrigger.setAttribute('aria-expanded', 'false');
+                        // Close the mobile nav menu too
+                        if (navLinks) {
+                            navLinks.classList.remove('show');
+                            const icon = menuToggle.querySelector('i');
+                            if (icon) {
+                                icon.classList.remove('fa-times');
+                                icon.classList.add('fa-bars');
+                            }
+                        }
+                    }
+                });
+            });
+        }
+
+        // Reset mega menu state on resize to desktop
+        window.addEventListener('resize', function() {
+            if (!isMobile() && megaItem) {
+                megaItem.classList.remove('open');
+                megaTrigger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close mobile nav when any nav link is clicked (except the mega trigger button)
+        if (navLinks) {
+            navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    // If the link is inside the mega menu, it's handled above.
+                    // If it's the services-link (the "Services" text), we let it navigate.
+                    // For other links, close the mobile nav.
+                    if (this.closest('#megaMenu')) return;
+                    if (this.classList.contains('services-link')) {
+                        // Let the link navigate to services.html — do NOT close nav on mobile?
+                        // Actually, on mobile we still want to close the nav after navigation.
+                        // But since the page will reload, we don't need to close it manually.
+                        // However, if it's an anchor link (#), we should close.
+                        const href = this.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            navLinks.classList.remove('show');
+                            const icon = menuToggle.querySelector('i');
+                            if (icon) {
+                                icon.classList.remove('fa-times');
+                                icon.classList.add('fa-bars');
+                            }
+                        }
+                        return;
+                    }
+                    navLinks.classList.remove('show');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
+        }
 
         // ----- CAREER FORM SUBMISSION -----
         document.getElementById('careerForm').addEventListener('submit', function(e) {
