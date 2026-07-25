@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Careers | Charlie Studio</title>
     
-    <meta name="description" content="Join Charlie Studio – we're hiring Web Developers, Designers, and Marketing experts in Machilipatnam.">
+    <meta name="description" content="Join Charlie Studio – we're hiring Business Development Executives, Sales Associates, and Commission-Based Closers.">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
             text-decoration: none;
         }
 
-        /* --- NAVIGATION (copied from index.html) --- */
+        /* --- NAVIGATION (matches index.html) --- */
         nav {
             position: fixed;
             top: 0;
@@ -425,18 +425,18 @@
             font-size: 0.95rem;
         }
 
-        /* --- OPEN POSITIONS --- */
+        /* --- OPEN POSITIONS (only the three roles) --- */
         .positions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .position-card {
             background: var(--glass);
             border: 1px solid var(--glass-border);
             border-radius: 16px;
-            padding: 25px;
+            padding: 28px 25px;
             transition: 0.3s;
             display: flex;
             flex-direction: column;
@@ -445,10 +445,11 @@
         .position-card:hover {
             border-color: var(--primary);
             background: rgba(255,255,255,0.03);
+            transform: translateY(-5px);
         }
 
         .position-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: white;
             margin-bottom: 5px;
         }
@@ -459,13 +460,20 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 12px;
         }
 
-        .position-card p {
-            color: #94a3b8;
+        .position-card .pos-description {
+            color: #cbd5e1;
             font-size: 0.95rem;
-            margin: 15px 0;
             flex: 1;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .position-card .pos-description strong {
+            color: white;
+            font-weight: 600;
         }
 
         .position-card .pos-tag {
@@ -477,6 +485,7 @@
             border-radius: 50px;
             margin-right: 8px;
             border: 1px solid var(--glass-border);
+            margin-bottom: 8px;
         }
 
         .btn-apply-pos {
@@ -493,6 +502,7 @@
             display: inline-block;
             text-align: center;
             margin-top: 15px;
+            align-self: flex-start;
         }
 
         .btn-apply-pos:hover {
@@ -650,7 +660,7 @@
             transform: translateY(0);
         }
 
-        /* --- MOBILE (copied & merged from index.html) --- */
+        /* --- MOBILE (copied from index.html) --- */
         @media screen and (max-width: 600px) {
             nav,
             nav.sticky {
@@ -865,7 +875,7 @@
 </head>
 <body>
 
-    <!-- ===== UPDATED NAVIGATION (matches index.html) ===== -->
+    <!-- ===== NAVIGATION (matches index.html) ===== -->
     <nav id="navbar">
         <a href="index.html" class="logo">Charlie<span>Studio</span></a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">
@@ -975,7 +985,7 @@
         </div>
     </section>
 
-    <!-- OPEN POSITIONS -->
+    <!-- ===== UPDATED OPEN POSITIONS (only the three roles) ===== -->
     <section class="section reveal" style="background: var(--card-bg);">
         <div class="container">
             <div class="section-title">
@@ -984,55 +994,74 @@
                 <p class="sub">Apply now—we review applications within 48 hours.</p>
             </div>
             <div class="positions-grid">
+
+                <!-- 1. Business Development Executive -->
                 <div class="position-card">
-                    <h3>Web Developer</h3>
+                    <h3>Business Development Executive</h3>
                     <span class="pos-type">Full-time / Remote</span>
-                    <p>Build high-performance websites using React, Next.js, or PHP. Experience with Tailwind and APIs is a plus.</p>
+                    <div class="pos-description">
+                        <p><strong>Role Focus:</strong> Reaching out to local businesses, pitching web design and digital marketing packages, and closing sales.</p>
+                        <ul style="list-style: none; padding-left: 0; margin: 10px 0;">
+                            <li style="padding: 4px 0;">• Prospecting new clients (local businesses, startups, and enterprises).</li>
+                            <li style="padding: 4px 0;">• Pitching Charlie Studio's web design, SEO, and social media services.</li>
+                            <li style="padding: 4px 0;">• Handling client communications, negotiations, and closing deals.</li>
+                        </ul>
+                        <p><strong>Great for:</strong> Someone with strong communication skills who loves talking to people and driving revenue.</p>
+                    </div>
                     <div>
-                        <span class="pos-tag">React</span>
-                        <span class="pos-tag">Next.js</span>
-                        <span class="pos-tag">PHP</span>
+                        <span class="pos-tag">Sales</span>
+                        <span class="pos-tag">Client Acquisition</span>
+                        <span class="pos-tag">Negotiation</span>
                     </div>
                     <a href="#apply" class="btn-apply-pos">Apply Now →</a>
                 </div>
+
+                <!-- 2. Remote Sales Associate -->
                 <div class="position-card">
-                    <h3>UI/UX Designer</h3>
-                    <span class="pos-type">Full-time / Remote</span>
-                    <p>Design beautiful, user-centric interfaces in Figma. Collaborate with developers to bring your vision to life.</p>
+                    <h3>Remote Sales Associate</h3>
+                    <span class="pos-type">Flexible / Commission-Driven</span>
+                    <div class="pos-description">
+                        <p><strong>Role Focus:</strong> A flexible or commission-driven role where individuals bring in web development clients in exchange for a percentage of the project value.</p>
+                        <ul style="list-style: none; padding-left: 0; margin: 10px 0;">
+                            <li style="padding: 4px 0;">• High-incentive role for identifying businesses that need a website upgrade.</li>
+                            <li style="padding: 4px 0;">• Generating meetings and closing web design contracts.</li>
+                        </ul>
+                        <p><strong>Great for:</strong> Freelance sales reps or students looking for performance-based earnings.</p>
+                    </div>
                     <div>
-                        <span class="pos-tag">Figma</span>
-                        <span class="pos-tag">Design Systems</span>
-                        <span class="pos-tag">Prototyping</span>
+                        <span class="pos-tag">Sales</span>
+                        <span class="pos-tag">Commission</span>
+                        <span class="pos-tag">Remote</span>
                     </div>
                     <a href="#apply" class="btn-apply-pos">Apply Now →</a>
                 </div>
+
+                <!-- 3. Commission-Based Closer -->
                 <div class="position-card">
-                    <h3>Digital Marketing Specialist</h3>
-                    <span class="pos-type">Full-time / Remote</span>
-                    <p>Drive growth through SEO, social media, and content marketing. Analytics and creative copywriting skills are essential.</p>
+                    <h3>Commission-Based Closer</h3>
+                    <span class="pos-type">Commission-Only / Remote</span>
+                    <div class="pos-description">
+                        <p><strong>Role Focus:</strong> Close high-ticket web development and marketing deals for a generous commission.</p>
+                        <ul style="list-style: none; padding-left: 0; margin: 10px 0;">
+                            <li style="padding: 4px 0;">• Focus on closing rather than prospecting—leads are provided.</li>
+                            <li style="padding: 4px 0;">• Handle discovery calls, proposal presentations, and contract negotiations.</li>
+                            <li style="padding: 4px 0;">• Earn a percentage of the project value for every deal you close.</li>
+                        </ul>
+                        <p><strong>Great for:</strong> Experienced sales professionals who thrive on closing and want uncapped earning potential.</p>
+                    </div>
                     <div>
-                        <span class="pos-tag">SEO</span>
-                        <span class="pos-tag">Google Ads</span>
-                        <span class="pos-tag">Analytics</span>
+                        <span class="pos-tag">Closing</span>
+                        <span class="pos-tag">High-Ticket</span>
+                        <span class="pos-tag">Commission</span>
                     </div>
                     <a href="#apply" class="btn-apply-pos">Apply Now →</a>
                 </div>
-                <div class="position-card">
-                    <h3>Project Manager</h3>
-                    <span class="pos-type">Full-time / Remote</span>
-                    <p>Coordinate client projects, manage timelines, and ensure smooth delivery. Experience with Agile and Jira is a plus.</p>
-                    <div>
-                        <span class="pos-tag">Agile</span>
-                        <span class="pos-tag">Jira</span>
-                        <span class="pos-tag">Client Communication</span>
-                    </div>
-                    <a href="#apply" class="btn-apply-pos">Apply Now →</a>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- APPLICATION FORM -->
+    <!-- APPLICATION FORM (role dropdown updated to match the three positions) -->
     <section class="section reveal" id="apply">
         <div class="container">
             <div class="section-title">
@@ -1067,11 +1096,9 @@
                     <div class="form-group">
                         <select id="candidateRole" required>
                             <option value="" disabled selected>Which role interests you? *</option>
-                            <option value="Web Developer">Web Developer</option>
-                            <option value="UI/UX Designer">UI/UX Designer</option>
-                            <option value="Digital Marketing Specialist">Digital Marketing Specialist</option>
-                            <option value="SEO Expert">SEO Expert</option>
-                            <option value="Project Manager">Project Manager</option>
+                            <option value="Business Development Executive">Business Development Executive</option>
+                            <option value="Remote Sales Associate">Remote Sales Associate</option>
+                            <option value="Commission-Based Closer">Commission-Based Closer</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
@@ -1084,7 +1111,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="url" id="candidatePortfolio" placeholder="Portfolio / GitHub link (optional)">
+                        <input type="url" id="candidatePortfolio" placeholder="Portfolio / LinkedIn / CV link (optional)">
                     </div>
                     <div class="form-group">
                         <textarea id="candidateMessage" rows="4" placeholder="Tell us why you'd be a great fit... *" required></textarea>
@@ -1161,10 +1188,9 @@
             return window.matchMedia('(max-width: 600px)').matches;
         }
 
-        // On mobile: toggle mega menu when clicking the chevron button
         if (megaTrigger) {
             megaTrigger.addEventListener('click', function(e) {
-                e.stopPropagation(); // prevent event bubbling
+                e.stopPropagation();
                 if (isMobile()) {
                     e.preventDefault();
                     const isOpen = megaItem.classList.toggle('open');
@@ -1173,7 +1199,6 @@
             });
         }
 
-        // Close mega menu when clicking outside (mobile)
         document.addEventListener('click', function(e) {
             if (isMobile() && megaItem && !megaItem.contains(e.target)) {
                 megaItem.classList.remove('open');
@@ -1181,14 +1206,12 @@
             }
         });
 
-        // Close mobile mega panel when a sub-link is tapped
         if (megaMenu) {
             megaMenu.querySelectorAll('a').forEach(function(link) {
                 link.addEventListener('click', function() {
                     if (isMobile()) {
                         megaItem.classList.remove('open');
                         megaTrigger.setAttribute('aria-expanded', 'false');
-                        // Close the mobile nav menu too
                         if (navLinks) {
                             navLinks.classList.remove('show');
                             const icon = menuToggle.querySelector('i');
@@ -1202,7 +1225,6 @@
             });
         }
 
-        // Reset mega menu state on resize to desktop
         window.addEventListener('resize', function() {
             if (!isMobile() && megaItem) {
                 megaItem.classList.remove('open');
@@ -1210,19 +1232,11 @@
             }
         });
 
-        // Close mobile nav when any nav link is clicked (except the mega trigger button)
         if (navLinks) {
             navLinks.querySelectorAll('a').forEach(function(link) {
                 link.addEventListener('click', function() {
-                    // If the link is inside the mega menu, it's handled above.
-                    // If it's the services-link (the "Services" text), we let it navigate.
-                    // For other links, close the mobile nav.
                     if (this.closest('#megaMenu')) return;
                     if (this.classList.contains('services-link')) {
-                        // Let the link navigate to services.html — do NOT close nav on mobile?
-                        // Actually, on mobile we still want to close the nav after navigation.
-                        // But since the page will reload, we don't need to close it manually.
-                        // However, if it's an anchor link (#), we should close.
                         const href = this.getAttribute('href');
                         if (href && href.startsWith('#')) {
                             navLinks.classList.remove('show');
@@ -1256,7 +1270,6 @@
             const portfolio = document.getElementById('candidatePortfolio').value.trim();
             const message = document.getElementById('candidateMessage').value.trim();
 
-            // Validation
             if (!name) { alert('Please enter your full name'); return; }
             if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                 alert('Please enter a valid email address');
@@ -1270,7 +1283,7 @@
             if (!experience) { alert('Please select your experience level'); return; }
             if (!message) { alert('Please tell us why you\'d be a great fit'); return; }
 
-            const WHATSAPP = '916301039924'; // 👈 Change this to your WhatsApp number
+            const WHATSAPP = '916301039924'; // Change to your WhatsApp number
             let msg = `New Job Application!%0A`;
             msg += `Name: ${name}%0A`;
             msg += `Email: ${email}%0A`;
@@ -1280,7 +1293,6 @@
             if (portfolio) msg += `Portfolio: ${portfolio}%0A`;
             msg += `Message: ${message}`;
 
-            // Send via WhatsApp
             window.location.href = `https://wa.me/${WHATSAPP}?text=${msg}`;
         });
     </script>
