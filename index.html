@@ -941,6 +941,7 @@
             font-size: 0.9rem;
         }
 
+        /* --- FLOATING WHATSAPP BUTTON - DESKTOP ONLY --- */
         .wa-float {
             position: fixed;
             bottom: 20px;
@@ -972,6 +973,12 @@
 
         /* --- MOBILE --- */
         @media screen and (max-width: 600px) {
+
+            /* Hide floating WhatsApp button on mobile */
+            .wa-float {
+                display: none !important;
+            }
+
             nav,
             nav.sticky {
                 padding: 15px 5%;
@@ -1209,13 +1216,6 @@
                 font-size: 0.8rem;
             }
 
-            .wa-float {
-                bottom: 15px;
-                right: 15px;
-                width: 52px;
-                height: 52px;
-                font-size: 26px;
-            }
         }
 
         @media screen and (max-width: 375px) {
@@ -1334,13 +1334,6 @@
                 font-size: 0.75rem;
             }
 
-            .wa-float {
-                bottom: 10px;
-                right: 10px;
-                width: 48px;
-                height: 48px;
-                font-size: 24px;
-            }
         }
     </style>
 </head>
@@ -1762,6 +1755,7 @@
         <p>&copy; 2026 Charlie Studio. All rights reserved. Crafted for excellence.</p>
     </footer>
 
+    <!-- FLOATING WHATSAPP BUTTON — DESKTOP ONLY (hidden on mobile via CSS) -->
     <a href="https://wa.me/916301039924" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
